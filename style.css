@@ -203,21 +203,21 @@ footer p {
     padding: 20px;
   }
 
-  /* Index form grid becomes single column on mobile */
+  
   .input {
     grid-template-columns: 1fr;
     width: 100%;
   }
 
-  /* Student form rows stack vertically */
+  
   .student-form .row {
     flex-direction: column;
     gap: 1rem;
   }
 
-  /* Ensure button and inputs don't overflow */
+  
   .student-form .btn,
   .signin_btn {
-    width: 100%;
+    width: 90%;
   }
 }
