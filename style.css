@@ -1,122 +1,199 @@
-*{
-    margin:0;
-    padding:0;
+/* ===========================
+   GLOBAL STYLES (shared)
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
 }
 
-h1{
-    text-align: center;
-    margin-top: 20px;
-    font-size: 30px;
-    color: #2b2b8c;
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #2b2b8c;
 }
 
-
-
-/*------ main form ------*/
-main{
-    width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    font-size: small;
-    border: 2px;
-    border-radius: 0;
-    background: rgba(100, 100, 250, 0.2);
-    box-shadow: 5px 5px 10px grey;
+/* --- Form container for index.html --- */
+main {
+  width: 50%;             /* keep it responsive */
+  margin: 40px auto;      /* center horizontally */
+  padding: 30px;          /* inner spacing */
+  font-family: "Segoe UI", sans-serif;
+  background: rgba(100, 100, 250, 0.2); /* keep semi-transparent purple */
+  border-radius: 12px;    /* nice rounded corners */
+  box-sizing: border-box; /* important for padding + width */
+  display: block;         /* default block behavior */
 }
 
-h3{
-    text-align: center;
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
- p{
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 20px;
-    color: grey;
-    font-family: sans-serif;
+/* --- Index Form heading and description --- */
+main h3 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-form{
-    padding: 10px;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    font-family: sans-serif;
+main p {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: grey;
+  font-family: sans-serif;
 }
 
-.input input, 
-main select,
-.input input[type="date"] {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid grey;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box; /* Ensures padding and border don't increase the total width */
-    height: 42px; /* Set a consistent height */
+/* --- Input grid (index.html) --- */
+.input {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 80%;
+  margin: 0 auto 20px auto;
 }
 
-
-.terms{
-    text-align: left;
-    margin: 15px;
-    font-size: 14px;
-    
+.input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-.btn{
-    width: 95%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    background-color: rgb(63, 63, 214);
-    cursor: pointer;
+/* --- Terms section (index.html) --- */
+.terms {
+  text-align: left;
+  margin: 20px 0;
+  font-size: 14px;
 }
 
-.btn a{
-    text-decoration: none;
-    color: white;
+/* --- Submit button (index.html) --- */
+.signin_btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: rgb(63, 63, 214);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
- .btn:hover{
-    background-color: rgb(0, 0, 139);
-    transition: 0.3s;
-    transform: scale(1.09);
+.signin_btn:hover {
+  background-color: rgb(0, 0, 139);
+  transition: 0.3s;
+  transform: scale(1.05);
 }
 
-.signin_btn{
-    width: 95%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    background-color: rgb(63, 63, 214);
-    cursor: pointer;
-    color:#fff;
-    text-decoration: none;
+main p a {
+  color: rgb(63, 63, 214);
+  text-decoration: none;
 }
 
-.signin_btn:hover{
-    background-color: rgb(0, 0, 139);
-    transition: 0.3s;
-    transform: scale(1.09);
-}
-/*------ footer ------*/
-footer{
-    text-align: center;
-    padding: 20px;
-    background-color: grey;
-    margin-top: 50px;
-    font-size: 14px;
+main p a:hover {
+  text-decoration: underline;
 }
 
-footer p{
-    color: white;
+/* --- Responsive grid for index --- */
+@media (min-width: 600px) {
+  .input {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .input input {
+    width: 100%;
+  }
 }
 
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: grey;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+footer p {
+  color: white;
+}
+
+/* ===========================
+   STUDENT INFO PAGE STYLES
+=========================== */
+
+.student-form {
+  max-width: 700px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.student-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2b2b8c;
+}
+
+.student-form input,
+.student-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  border-color: #2b2b8c;
+  outline: none;
+}
+
+.student-form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.student-form .row > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.student-form .btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b2b8c;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.student-form .btn:hover {
+  background-color: #1d1d7a;
+  transform: scale(1.03);
+}
+
+.student-form p {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .student-form .row {
+    flex-direction: column;
+  }
+}
