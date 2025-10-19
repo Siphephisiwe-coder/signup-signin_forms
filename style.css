@@ -196,14 +196,13 @@ footer p {
    MOBILE RESPONSIVENESS FIXES
 =========================== */
 
-/* Make main take almost full width on small screens */
+
 @media (max-width: 600px) {
   main {
     width: 90%;
     padding: 20px;
   }
 
-  
   .input {
     grid-template-columns: 1fr;
     width: 100%;
@@ -215,9 +214,9 @@ footer p {
     gap: 1rem;
   }
 
-  
+
   .student-form .btn,
   .signin_btn {
-    width: 90%;
+    width: 100%;
   }
 }
