@@ -15,14 +15,14 @@ h1 {
 
 /* --- Form container for index.html --- */
 main {
-  width: 50%;             /* keep it responsive */
-  margin: 40px auto;      /* center horizontally */
-  padding: 30px;          /* inner spacing */
+  width: 50%;             
+  margin: 40px auto;      
+  padding: 30px;          
   font-family: "Segoe UI", sans-serif;
-  background: rgba(100, 100, 250, 0.2); /* keep semi-transparent purple */
-  border-radius: 12px;    /* nice rounded corners */
-  box-sizing: border-box; /* important for padding + width */
-  display: block;         /* default block behavior */
+  background: rgba(100, 100, 250, 0.2); 
+  border-radius: 12px;    
+  box-sizing: border-box; 
+  display: block;
 }
 
 /* --- Index Form heading and description --- */
@@ -192,8 +192,32 @@ footer p {
   margin-top: 10px;
 }
 
+/* ===========================
+   MOBILE RESPONSIVENESS FIXES
+=========================== */
+
+/* Make main take almost full width on small screens */
 @media (max-width: 600px) {
+  main {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* Index form grid becomes single column on mobile */
+  .input {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  /* Student form rows stack vertically */
   .student-form .row {
     flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Ensure button and inputs don't overflow */
+  .student-form .btn,
+  .signin_btn {
+    width: 100%;
   }
 }
