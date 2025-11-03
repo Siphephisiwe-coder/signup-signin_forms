@@ -245,3 +245,19 @@ footer p {
     width: 100%;
   }
 }
+
+/* Desktop / laptop: use a 2-column grid for rows so paired inputs display side-by-side
+   while single fields remain full-width. This preserves the previous desktop layout. */
+@media (min-width: 700px) {
+  .student-form .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* make sure grid children don't force overflow */
+  .student-form .row > div {
+    min-width: 0;
+  }
+}
