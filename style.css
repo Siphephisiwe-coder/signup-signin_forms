@@ -1,9 +1,13 @@
 /* ===========================
    GLOBAL STYLES (shared)
 =========================== */
-* {
+/* Reset + use border-box so percentage widths include padding/border (prevents overflow on mobile) */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -164,6 +168,7 @@ footer p {
 
 .student-form .row > div {
   flex: 1;
+  /* allow columns to sit side-by-side on wide screens, but don't force a large minimum on small screens */
   min-width: 250px;
 }
 
@@ -217,6 +222,26 @@ footer p {
 
   .student-form .btn,
   .signin_btn {
+    width: 100%;
+  }
+}
+
+/* Additional mobile fix: let the row children shrink to fit small screens
+   (prevents a 250px min-width from causing horizontal overflow and pushing inputs off-center) */
+@media (max-width: 600px) {
+  .student-form {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .student-form .row > div {
+    min-width: 0;
+  }
+
+  /* Make sure inputs/selects occupy full available width on small screens */
+  .student-form input,
+  .student-form select,
+  .student-form textarea {
     width: 100%;
   }
 }
